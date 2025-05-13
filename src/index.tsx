@@ -8,14 +8,27 @@ import App from "./App";
 import AuthProvider from "./containers/auth";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./store/store";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { darkTheme, lightTheme } from "./utils/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+
+const theme = createTheme({
+  colorSchemes: {
+    dark: darkTheme,
+    light: lightTheme
+  }
+});
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <AuthProvider>
-        <App />
+        <ThemeProvider theme={theme} defaultMode="dark">
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
       </AuthProvider>
     </Provider>
   </React.StrictMode>

@@ -4,7 +4,9 @@ import { FC, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectUser } from "./containers/auth/selectors";
-import logo from "./logo.svg";
+import Header from "./components/Header";
+import Content from "./components/Content";
+import { Stack } from "@mui/material";
 
 const App: FC = (): ReactElement => {
   const dispatch = useDispatch();
@@ -15,20 +17,10 @@ const App: FC = (): ReactElement => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stack spacing={10} width={"100%"} height={"100%"}>
+        <Header />
+        <Content />
+      </Stack>
     </div>
   );
 };
