@@ -1,19 +1,15 @@
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import { FC, ReactElement } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
-import { selectUser } from "./containers/auth/selectors";
 import Header from "./components/Header";
 import Content from "./components/Content";
-import { Stack } from "@mui/material";
+import { Stack, useColorScheme } from "@mui/material";
+import { ToastContainer } from "react-toastify";
 
 const App: FC = (): ReactElement => {
-  const dispatch = useDispatch();
-  const user = useSelector(selectUser);
-
-  // TODO: You can access user data and now fetch user's playlists
-  console.log(user);
+  const { mode } = useColorScheme();
 
   return (
     <div className="App">
@@ -21,6 +17,7 @@ const App: FC = (): ReactElement => {
         <Header />
         <Content />
       </Stack>
+      <ToastContainer position="bottom-left" theme={mode} />
     </div>
   );
 };
