@@ -18,6 +18,29 @@ const theme = createTheme({
   colorSchemes: {
     dark: darkTheme,
     light: lightTheme
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16
+        }
+      }
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16
+        }
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16
+        }
+      }
+    }
   }
 });
 
