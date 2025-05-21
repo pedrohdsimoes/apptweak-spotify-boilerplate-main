@@ -19,6 +19,15 @@ const theme = createTheme({
     dark: darkTheme,
     light: lightTheme
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536
+    }
+  },
   components: {
     MuiButton: {
       styleOverrides: {

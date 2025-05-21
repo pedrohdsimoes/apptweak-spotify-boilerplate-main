@@ -3,8 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { FC, ReactElement } from "react";
 
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Header from "./components/mainPage/Header";
+import Content from "./components/mainPage/Content";
 import { Stack, useColorScheme } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 
