@@ -364,8 +364,9 @@ function* deletePlaylistSaga(action: ReturnType<typeof deletePlaylist>) {
       return;
     }
 
+    // It is not possible to actually delete a playlist but since we create private playlists, by unfollowing it we can remove it from our list
     const request = () =>
-      axios.delete(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+      axios.delete(`https://api.spotify.com/v1/playlists/${playlistId}/followers`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
