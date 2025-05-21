@@ -14,19 +14,10 @@ const ThemeModeToggler: React.FC<ThemeModeTogglerProps> = () => {
     return null;
   }
   return (
-    <Box
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "background.default",
-        color: "text.primary",
-        borderRadius: 1,
-        minHeight: "56px"
-      }}
-    >
+    <Box>
       <FormControl>
         <RadioGroup
-          aria-labelledby="demo-theme-toggle"
+          aria-labelledby="theme-toggle"
           name="theme-toggle"
           row
           value={mode}
