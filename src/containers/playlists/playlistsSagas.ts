@@ -319,7 +319,6 @@ function* searchTracksSaga(action: ReturnType<typeof searchTracks>) {
 }
 function* editPlaylistSaga(action: ReturnType<typeof editPlaylist>) {
   try {
-    const { name, description } = action.payload;
     const accessToken: string = yield select(selectAccessToken);
     const selectedPlaylist: Playlist = yield select(selectSelectedPlaylist);
 
@@ -342,8 +341,8 @@ function* editPlaylistSaga(action: ReturnType<typeof editPlaylist>) {
     let { data } = yield call(request);
     data = {
       ...selectedPlaylist,
-      name,
-      description: description || ""
+      name: action.payload.name,
+      description: action.payload.description
     };
 
     yield put(editPlaylistSuccess(data));
