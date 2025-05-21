@@ -37,6 +37,7 @@ const Content: React.FC = () => {
   // Auto-select first playlist when playlists load
   useEffect(() => {
     // !NOTE: uncoment to enable always select first playlist from the list
+    // ! this is disabled to showcase how it looks when user does not have playlists or not one selected
     // if (playlists.length > 0 && !selectedPlaylist && status === RequestStatus.SUCCESS) {
     //   const firstPlaylistId = playlists[0].id;
     //   dispatch(setSelectedPlaylist(firstPlaylistId));
