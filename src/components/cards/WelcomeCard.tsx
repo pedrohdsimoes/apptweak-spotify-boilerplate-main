@@ -38,7 +38,7 @@ const WelcomeCard: React.FC<WelcomeCardProps> = ({ onCreatePlaylistClick }) => {
       title="Welcome to Tweakify"
       description="Discover and manage your favorite playlists & tracks."
       content={steps}
-      button={<AddPlaylistButton />}
+      button={<AddPlaylistButton buttonColor="inherit" />}
       icon={icon}
     />
   );

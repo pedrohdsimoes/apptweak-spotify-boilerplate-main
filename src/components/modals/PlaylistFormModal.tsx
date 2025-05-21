@@ -19,6 +19,7 @@ interface PlaylistFormModalProps {
     description: string;
   };
   buttonVariant?: "text" | "outlined" | "contained";
+  buttonColor?: "primary" | "secondary" | "inherit";
   buttonText?: string;
 }
 
@@ -26,6 +27,7 @@ const PlaylistFormModal: React.FC<PlaylistFormModalProps> = ({
   mode,
   playlist,
   buttonVariant,
+  buttonColor = "primary",
   buttonText
 }) => {
   const dispatch = useDispatch();
@@ -173,6 +175,7 @@ const PlaylistFormModal: React.FC<PlaylistFormModalProps> = ({
   return (
     <>
       <Button
+        color={buttonColor}
         variant={buttonVariant || defaultTextVariant}
         onClick={handleOpen}
         endIcon={<ButtonIcon />}
